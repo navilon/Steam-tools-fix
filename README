@@ -1,1 +1,32 @@
 Usage: Run the program as an administrator and wait for the Steam hashing cleanup
+
+
+open source program:
+@echo off
+chcp 65001 >nul
+
+echo Starting to organize the files Steam...
+
+:: Укажите пути к файлам, которые нужно удалить
+del /f /q "C:\Program Files (x86)\Steam\appcache\appinfo.vdf"
+del /f /q "C:\Program Files (x86)\Steam\appcache\packageinfo.vdf"
+del /f /q "C:\Program Files (x86)\Steam\appcache\packcode.vdf"
+del /f /q "C:\Program Files (x86)\Steam\appcache\version"
+
+echo Files delet.
+
+echo Restart Steam...
+taskkill /f /im steam.exe >nul 2>&1
+timeout /t 2 /nobreak >nul
+start "" "C:\Program Files (x86)\Steam\steam.exe"
+
+echo Final proces.
+pause
+
+
+
+
+
+
+
+By:navilon
